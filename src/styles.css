@@ -1,0 +1,13 @@
+
+
+.login-container,
+.register-container,
+.product-form-container,
+.product-list-container {
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.mat-form-field {
+  width: 100%;
+}

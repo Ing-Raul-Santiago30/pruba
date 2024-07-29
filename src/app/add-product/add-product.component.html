@@ -1,0 +1,32 @@
+<div class="add-product-container">
+  <mat-card>
+    <mat-card-title>Agregar Producto</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="addProduct()" #productForm="ngForm">
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input placeholder="name" matInput [(ngModel)]="product.name" name="name" required #nameInput="ngModel">
+          <mat-error *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Precio</mat-label>
+          <input placeholder="number"matInput type="number" [(ngModel)]="product.price" name="price" required #priceInput="ngModel">
+          <mat-error *ngIf="priceInput.invalid && (priceInput.dirty || priceInput.touched)">
+            Price is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Descripción</mat-label>
+          <input placeholder="description" matInput [(ngModel)]="product.description" name="description" required #descriptionInput="ngModel">
+          <mat-error *ngIf="descriptionInput.invalid && (descriptionInput.dirty || descriptionInput.touched)">
+            Description is required
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="productForm.invalid">Guardar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
